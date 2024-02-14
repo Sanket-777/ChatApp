@@ -32,6 +32,8 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log(`User ${socket.id} disconnected`);
+      io.emit(`newleft`, `${socket.id.substring(0, 4)} has joined the chatroom.`);
+
   });
 });
 

@@ -26,6 +26,12 @@ export default function ChatScreen() {
 
         });
 
+        socket.on('userleft', (data) => {
+            console.log(data + "msg data")
+            toast.info(data);
+
+        });
+
 
     }, []);
 
