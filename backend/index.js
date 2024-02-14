@@ -9,6 +9,11 @@ const io = new Server(httpServer, {
   },
 });
 
+io.use((socket, next) => {
+  // Set Access-Control-Allow-Origin header for all requests
+  socket.handshake.headers.origin = "*";
+  next();
+});
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} just connected `);
 
