@@ -12,6 +12,8 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} just connected `);
 
+  io.emit(`newuser`, `${socket.id.substring(0, 4)} has joined the chatroom.`);
+
   socket.on("message", (data) => {
     console.log(data);
 
