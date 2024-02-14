@@ -3,10 +3,7 @@
     "builds": [
       {
         "src": "./index.js",
-        "use": "@vercel/node",
-        "headers": {
-          "Access-Control-Allow-Origin": "*"
-        }
+        "use": "@vercel/node"
       }
     ],
     "rewrites": [{ "source": "/(.*)", "destination": "index.js" }]
