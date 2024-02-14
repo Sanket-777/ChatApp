@@ -1,5 +1,6 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
+const port = process.env.PORT || 4000;
 
 const httpServer = createServer();
 
@@ -31,6 +32,6 @@ io.on("connection", (socket) => {
   });
 });
 
-httpServer.listen(4000, () => {
+httpServer.listen(port, () => {
   console.log(`Listening on Port 4000`);
 });
