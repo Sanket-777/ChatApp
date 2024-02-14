@@ -3,7 +3,7 @@ import ChatField from "../Components/ChatField";
 import Header from "../Components/Header";
 import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-const socket = io('https://chat-app-backend-self-kappa.vercel.app');
+const socket = io('https://chat-app-backend-self-kappa.vercel.app/socket.io');
 // const socket = io('http://localhost:4000'); // Connect to server
 import 'react-toastify/dist/ReactToastify.css';
 
