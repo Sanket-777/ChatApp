@@ -1,14 +1,14 @@
 import { createServer } from "http";
 import { Server } from "socket.io";
-
+import cors from "cors";
 const httpServer = createServer();
 
-const io = new Server(httpServer, {
-  cors: {
+const io = new Server(httpServer);
+io.use(
+  cors({
     origin: "*",
-  },
-});
-
+  })
+);
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} just connected `);
 
