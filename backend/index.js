@@ -12,12 +12,6 @@ const io = new Server(httpServer, {
   },
 });
 
-io.engine.on("headers", (headers, req) => {
-  headers["Access-Control-Allow-Origin"] = "https://randomchat-zeta.vercel.app";
-  headers["Access-Control-Allow-Headers"] =
-    "origin, x-requested-with, content-type";
-  headers["Access-Control-Allow-Methodsn"] = "PUT, GET, POST, DELETE, OPTIONS";
-});
 
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} just connected `);
@@ -32,9 +26,9 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", () => {
     console.log(`User ${socket.id} disconnected`);
-      io.emit(`newleft`, `${socket.id.substring(0, 4)} has joined the chatroom.`);
+    io.emit(`userleft`, `${socket.id.substring(0, 4)} has left the chatroom.`);
+});
 
-  });
 });
 
 httpServer.listen(4000, () => {
