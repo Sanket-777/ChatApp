@@ -12,12 +12,13 @@ const io = new Server(httpServer, {
   },
 });
 
-// io.engine.on("headers", (headers, req) => {
-//   headers["Access-Control-Allow-Origin"] = "https://randomchat-zeta.vercel.app";
-//   headers["Access-Control-Allow-Headers"] =
-//     "origin, x-requested-with, content-type";
-//   headers["Access-Control-Allow-Methodsn"] = "PUT, GET, POST, DELETE, OPTIONS";
-// });
+io.engine.on("headers", (headers, req) => {
+  headers["Access-Control-Allow-Origin"] = "https://randomchat-zeta.vercel.app";
+  headers["Access-Control-Allow-Headers"] =
+    "origin, x-requested-with, content-type";
+  headers["Access-Control-Allow-Methodsn"] = "PUT, GET, POST, DELETE, OPTIONS";
+});
+
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} just connected `);
 
