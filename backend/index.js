@@ -6,7 +6,7 @@ const httpServer = createServer();
 const io = new Server(httpServer);
 io.use(
   cors({
-    origin: "*",
+    origin: "https://randomchat-zeta.vercel.app/",
   })
 );
 io.on("connection", (socket) => {
