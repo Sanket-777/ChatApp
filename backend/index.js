@@ -5,7 +5,8 @@ const httpServer = createServer();
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "*",
+    origin: "https://randomchat-zeta.vercel.app",
+    methods: ["GET", "POST"], // You can specify allowed HTTP methods if needed
   },
 });
 
