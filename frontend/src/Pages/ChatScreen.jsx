@@ -1,12 +1,11 @@
-import ChatBox from "../components/ChatBox";
-import ChatField from "../components/ChatField";
-import Header from "../components/Header";
+import ChatBox from "../Components/ChatBox";
+import ChatField from "../Components/ChatField";
+import Header from "../Components/Header";
 import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-const socket = io('ws://localhost:4000'); // Connect to server
+const socket = io('ws://localhost:4000'); 
 import 'react-toastify/dist/ReactToastify.css';
 
-// Import necessary components from react-toastify
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -44,6 +43,16 @@ export default function ChatScreen() {
                     setInputValue={setInputValue}
                     sendMessage={sendMessage} />
             </div>
+             <ToastContainer
+                autoClose={3000} 
+                hideProgressBar
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+             />
             
         </>
 
