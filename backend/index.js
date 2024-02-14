@@ -5,7 +5,7 @@ const httpServer = createServer();
 
 const io = new Server(httpServer, {
   cors: {
-    origin: "https://randomchat-zeta.vercel.app/",
+    origin: "https://randomchat-zeta.vercel.app",
     methods: ["PUT", "GET", "POST", "DELETE", "OPTIONS"],
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
     credentials: true
@@ -13,7 +13,7 @@ const io = new Server(httpServer, {
 });
 
 io.engine.on("headers", (headers, req) => {
-  headers["Access-Control-Allow-Origin"] = "https://randomchat-zeta.vercel.app/";
+  headers["Access-Control-Allow-Origin"] = "https://randomchat-zeta.vercel.app";
   headers["Access-Control-Allow-Headers"] =
     "origin, x-requested-with, content-type";
   headers["Access-Control-Allow-Methodsn"] = "PUT, GET, POST, DELETE, OPTIONS";
