@@ -3,7 +3,7 @@ import ChatField from "../Components/ChatField";
 import Header from "../Components/Header";
 import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-const socket = io('ws://localhost:4000'); 
+const socket = io('ws://chat-app-backend-self-kappa.vercel.app/');
 import 'react-toastify/dist/ReactToastify.css';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -43,8 +43,8 @@ export default function ChatScreen() {
                     setInputValue={setInputValue}
                     sendMessage={sendMessage} />
             </div>
-             <ToastContainer
-                autoClose={3000} 
+            <ToastContainer
+                autoClose={3000}
                 hideProgressBar
                 newestOnTop={false}
                 closeOnClick
@@ -52,8 +52,8 @@ export default function ChatScreen() {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-             />
-            
+            />
+
         </>
 
     )
