@@ -3,8 +3,11 @@ import { Server } from "socket.io";
 
 const httpServer = createServer();
 
-const io = new Server(httpServer);
-
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+  },
+});
 
 io.on("connection", (socket) => {
   console.log(`User ${socket.id} just connected `);
@@ -20,8 +23,7 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {
     console.log(`User ${socket.id} disconnected`);
     io.emit(`userleft`, `${socket.id.substring(0, 4)} has left the chatroom.`);
-});
-
+  });
 });
 
 httpServer.listen(4000, () => {
