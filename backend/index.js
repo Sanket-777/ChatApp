@@ -1,14 +1,14 @@
-import { createServer } from "http";
-import { Server } from "socket.io";
+const http = require("http");
+const { Server } = require("socket.io");
 
-const port = process.env.PORT || 4000;
-const httpServer = createServer();
+const httpServer = http.createServer();
 const io = new Server(httpServer, {
   cors: {
     origin: "*",
   },
 });
 
+let chatHistory = [];
 let numberOfPeopleInRoom = 0;
 
 io.use((socket, next) => {
@@ -21,9 +21,12 @@ io.on("connection", (socket) => {
   numberOfPeopleInRoom++;
   io.emit(`newuser`, `${socket.id.substring(0, 4)} has joined the chatroom.`);
   io.emit(`people`, numberOfPeopleInRoom);
+  io.emit("chatHistory", chatHistory);
 
   socket.on("message", (data) => {
     console.log(data);
+    let name = socket.id.substring(0, 4);
+    chatHistory.push(`${socket.id.substring(0, 4)}: ${data}`);
     io.emit(`message`, `${socket.id.substring(0, 4)}: ${data}`);
   });
 
@@ -35,6 +38,7 @@ io.on("connection", (socket) => {
   });
 });
 
+const port = process.env.PORT || 4000;
 httpServer.listen(port, () => {
-  console.log(`Listening on Port ${port}`);
+  console.log(`listening on port :${port}`);
 });
