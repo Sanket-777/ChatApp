@@ -2,6 +2,11 @@ export default function ChatField({ inputValue, setInputValue, sendMessage }) {
     const handleInputChange = (e) => {
         setInputValue(e.target.value);
     };
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+          sendMessage(); // Trigger sendMessage function on Enter key press
+        }
+      };
 
     return (
         <div className="flex p-2 font-medium rounded-b-lg bg-yellow-200">
@@ -10,6 +15,7 @@ export default function ChatField({ inputValue, setInputValue, sendMessage }) {
                 type="text"
                 value={inputValue}
                 onChange={handleInputChange}
+                onKeyDown={handleKeyPress}
             />
             <button
                 className="ml-4 focus:outline-none transform transition duration-300 hover:scale-110 active:scale-90"
