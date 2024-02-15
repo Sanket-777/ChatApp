@@ -50,7 +50,10 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 5. Push to the branch (`git push origin feature/my-feature`).
 6. Create a new Pull Request.
 
+## Frontend ScreenShots
 
-
-
-
+![Welcome Page](output/1.png)
+![Main Chat Screen](output/2.png)
+![New User Welcome toast](output/3.png)
+![Multiple user](output/4.png)
+![User left toast](output/5.png)
