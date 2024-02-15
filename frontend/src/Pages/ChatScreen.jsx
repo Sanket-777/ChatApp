@@ -51,10 +51,10 @@ export default function ChatScreen() {
             setPeople(data);
         });
 
-        socket.on('chatHistory', (history) => {
-            setMessages(history);
+        // socket.on('chatHistory', (history) => {
+        //     setMessages(history);
 
-        });
+        // });
 
         return (() => socket.disconnect())
     }, []);

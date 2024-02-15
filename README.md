@@ -5,13 +5,14 @@ This is a real-time chat application built with Node.js, Socket.IO, and React. I
 ## Features
 
 - **Real-time Communication:** Messages are delivered instantly to all connected clients.
-- **Multiple Chat Rooms:** Users can join different chat rooms and communicate with other users within those rooms.
+- **Multiple-User Chat Rooms:** Users can join different chat rooms and communicate with other users within those rooms.
 - **User Notifications:** Notifications are displayed for new user joining and user leaving the chat room.
-- **Responsive Design:** The frontend is designed to be responsive and work seamlessly across different devices.
+- **Emoji Support:** The user can use emoji's to express their feeling.
 
 ## Technologies Used
 
 - **Backend:**
+
   - Node.js
   - Socket.IO
   - HTTP Server
@@ -23,10 +24,10 @@ This is a real-time chat application built with Node.js, Socket.IO, and React. I
 
 ## Deployment
 
-The backend server is deployed on Render, and the frontend is deployed separately on another platform (replace this with the actual platform used).
+The backend server is deployed on Render, and the frontend is deployed separately on Vercel
 
-- **Backend Deployment:** [Link to Backend Deployment](https://your-render-app.onrender.com)
-- **Frontend Deployment:** [Link to Frontend Deployment](https://your-frontend-app.vercel.app)
+- **Backend Deployment:** [Link to Backend Deployment](https://chatapp-backend-mxxy.onrender.com)
+- **Frontend Deployment:** [Link to Frontend Deployment](https://randomchat-zeta.vercel.app/)
 
 ## Getting Started
 
@@ -56,6 +57,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Acknowledgements
 
 Special thanks to [Render](https://render.com) for hosting the backend server and providing seamless deployment.
+
 # Real-Time Chat Application
 
 This is a real-time chat application built with Node.js, Socket.IO, and React. It allows users to join chat rooms and communicate with each other in real-time.
@@ -70,6 +72,7 @@ This is a real-time chat application built with Node.js, Socket.IO, and React. I
 ## Technologies Used
 
 - **Backend:**
+
   - Node.js
   - Socket.IO
   - HTTP Server
@@ -82,7 +85,6 @@ This is a real-time chat application built with Node.js, Socket.IO, and React. I
 ## Deployment
 
 The backend server is deployed on Render, and the frontend is deployed separately on Vercel.
-
 
 ## Getting Started
 
@@ -104,7 +106,3 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 4. Commit your changes (`git commit -am 'Add new feature'`).
 5. Push to the branch (`git push origin feature/my-feature`).
 6. Create a new Pull Request.
-
-
-
-

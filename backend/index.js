@@ -8,7 +8,7 @@ const io = new Server(httpServer, {
   },
 });
 
-let chatHistory = [];
+// let chatHistory = [];
 let numberOfPeopleInRoom = 0;
 
 io.use((socket, next) => {
@@ -21,12 +21,12 @@ io.on("connection", (socket) => {
   numberOfPeopleInRoom++;
   io.emit(`newuser`, `${socket.id.substring(0, 4)} has joined the chatroom.`);
   io.emit(`people`, numberOfPeopleInRoom);
-  io.emit("chatHistory", chatHistory);
+  // io.emit("chatHistory", chatHistory);
 
   socket.on("message", (data) => {
     console.log(data);
     let name = socket.id.substring(0, 4);
-    chatHistory.push(`${socket.id.substring(0, 4)}: ${data}`);
+    // chatHistory.push(`${socket.id.substring(0, 4)}: ${data}`);
     io.emit(`message`, `${socket.id.substring(0, 4)}: ${data}`);
   });
 
