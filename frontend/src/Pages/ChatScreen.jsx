@@ -4,7 +4,6 @@ import ChatField from "../Components/ChatField";
 import Header from "../Components/Header";
 import { useState, useEffect } from 'react';
 const socket = io('https://chatapp-backend-mxxy.onrender.com');
-// const socket = io('https://chat-app-weld-two.vercel.app');
 // const socket = io('http://localhost:4000'); // Connect to server locally
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -61,8 +60,8 @@ export default function ChatScreen() {
     }, []);
 
     const sendMessage = () => {
-        socket.emit('message', inputValue); // Send message to server
-        setInputValue(''); // Clear input field
+        socket.emit('message', inputValue); 
+        setInputValue('');
     };
     return (
         <>

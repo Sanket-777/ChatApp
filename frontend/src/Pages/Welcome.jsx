@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Welcome() {
     const navigateTo = useNavigate();
     const handleStartChatting = () => {
-        navigateTo("/chat"); // Call navigateTo when the button is clicked
+        navigateTo("/chat"); 
     };
     return (
         <div className="bg-white  rounded-lg h-2/6  w-1/8 flex flex-col   shadow-xl border-solid border-1" >

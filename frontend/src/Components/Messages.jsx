@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 export default function Messages({ message }) {
-    // console.log(message + "In Messages")
     const name = message.substring(0, 4);
     return (
         <>

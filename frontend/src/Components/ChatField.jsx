@@ -13,7 +13,7 @@ export default function ChatField({ inputValue, setInputValue, sendMessage }) {
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             setShowEmojiPicker(false)
-            sendMessage(); // Trigger sendMessage function on Enter key press
+            sendMessage();
         }
     };
 
